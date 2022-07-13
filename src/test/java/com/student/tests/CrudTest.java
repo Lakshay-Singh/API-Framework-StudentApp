@@ -1,7 +1,11 @@
 package com.student.tests;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 
+import com.github.javafaker.Faker;
 import com.student.requests.RequestFactory;
 
 import io.qameta.allure.Story;
@@ -10,11 +14,25 @@ import io.restassured.RestAssured;
 @Story("CRUD Testing Story")
 public class CrudTest extends TestBase{
 	
-	RequestFactory request=new RequestFactory();
+	RequestFactory requests=new RequestFactory();
 	
-	@ Test
+	@Test
 	public void getAllStudents() {
 		
-		request.getAllStudents().then().statusCode(200);
+		requests.getAllStudents().then().statusCode(200);
+	}
+	
+	@Test
+	public void createNewStudent() {
+		Faker fake=new Faker();
+		String firstName=fake.name().firstName();
+		String lastName=fake.name().lastName();
+		String email=fake.internet().emailAddress();
+		String programme="Analyst";
+		List<String> courses=new ArrayList<String>();
+		courses.add("Data Mining");
+		courses.add("Excel");
+		
+		requests.createNewStuent("", firstName, lastName, email, programme, courses).then().statusCode(201);
 	}
 }

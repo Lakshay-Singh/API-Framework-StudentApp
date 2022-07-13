@@ -15,6 +15,6 @@ public class TestBase {
 		
 		RestAssured.baseURI=prop.getProperty("baseUrl");
 		RestAssured.port=Integer.valueOf(prop.getProperty("port"));
-		 
+		RestAssured.basePath=prop.getProperty("basePath"); 
 	}
 }

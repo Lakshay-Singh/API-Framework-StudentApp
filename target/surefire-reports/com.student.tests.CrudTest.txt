@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.student.tests.CrudTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.912 s <<< FAILURE! - in com.student.tests.CrudTest
-getAllStudents(com.student.tests.CrudTest)  Time elapsed: 0.328 s  <<< ERROR!
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 2.204 s <<< FAILURE! - in com.student.tests.CrudTest
+getAllStudents(com.student.tests.CrudTest)  Time elapsed: 0.546 s  <<< ERROR!
 java.net.MalformedURLException: no protocol: "http://localhost"
 	at com.student.tests.CrudTest.getAllStudents(CrudTest.java:18)
 
